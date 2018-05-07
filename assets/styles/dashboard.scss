@@ -1,0 +1,185 @@
+.dashboard {
+    .energy-meter-search {
+        max-width: 20%;
+        min-width: 20%;
+        font-size: 13px;
+        font-weight: bold;
+        z-index: 1;
+        position: fixed;
+        top: 45px;
+        left: 5%;
+        background-color: #fff;
+        border-radius: 5px;
+        .search-title {
+            font-weight: 900;
+            font-size: 18px;
+            color: #009999
+        }
+        .search-sub-title {
+            color: #aeaeae;
+            font-size: 12px;
+            font-weight: 500;
+        }
+        .search-box-section {
+            .search-box {
+                max-height: 40px;
+                .quote-search-box {
+                    border-color: #eaeaea !important;
+                    border-top: 1px solid #eaeaea;
+                    border-right: 1px solid #eaeaea;
+                    border-bottom: 1px solid #eaeaea;
+                    border-radius: 0px 6px 6px 0px;
+                    height: 35px;
+                }
+                .revenue-search-icon {
+                    text-align: center;
+                    width: 34px;
+                    height: 33px;
+                    line-height: 38px !important;
+                    top: 2px !important;
+                    font-size: 18px;
+                    border-top: 1px solid #eaeaea;
+                    border-left: 1px solid #eaeaea;
+                    border-bottom: 1px solid #eaeaea;
+                    border-radius: 6px 0px 0px 6px;
+                    color: #BBB8B8 !important;
+                }
+            }
+        }
+       
+    }
+    .energy-meters-list {
+        max-width: 40%;
+        min-width: 40%;
+        font-size: 13px;
+        font-weight: bold;
+        z-index: 1;
+        position: fixed;
+        top: 45px;
+        left: 60%;
+        .right-nav {
+            .navigation {
+                background-color: #ffff;
+                border-radius: 5px;
+                .hold-line {
+                    .current {
+                        border-right: 2px solid #dadada;
+                    }
+                    .current-div-left-border {
+                        border-left: 1px solid #dadada;
+                    }
+                    .set-border {                        
+                        &.active {
+                            border-bottom: 3px solid #00999a;
+                        }
+                        &.inactive {
+                            border-bottom: 3px solid #dadada;
+                        }
+                    }
+                    .common {
+                        font-size: 14px;
+                        font-weight: 700;
+                        text-transform: capitalize;
+                        margin: 0px 10px;
+                        &.active {
+                            color: #00999a;
+                        }
+                        &.in-active {
+                            color: #aeaeae;
+                            border: none;
+                        }
+                        &:hover {
+                            background-color: #ffffff;
+                        }
+                    }
+                    .daily-report-details {
+                        max-height: 500px;
+                        overflow-y: auto;
+                        .table {
+                            &.meters-details-table {
+                                .table-head-row {
+                                    background-color: #f7f7f7;
+                                }
+                                thead {
+                                    tr {
+                                        .head {
+                                            color: #aeaeae;
+                                            font-size: 11px;
+                                            font-weight: 700;
+                                        }
+                                        th {
+                                        }
+                                    }
+                                }                                
+                                tbody {
+                                    .table-body-row {
+                                        &.row-active {
+                                            background-color: #fff4f4;
+                                        }
+                                    }  
+                                    tr {
+                                        border-bottom: 1px solid #dadada;
+                                        border-top: 1px solid #dadada;
+                                        max-height: 65px;                                                                             
+                                        td {
+                                            text-align: center;
+                                            
+                                            .common-font {
+                                                color: #000000;
+                                                font-size: 12px;
+                                                font-weight: 400;
+                                                &.alert {
+                                                    color: #0295e6;
+                                                }
+                                            }
+                                            .address {
+                                                color: #aeaeae;
+                                                font-size: 10px;
+                                                font-weight: 400;
+                                            }
+                                            .left-arrow {
+                                                font-size: 20px;
+                                                margin-top: 4px;   
+                                                color: #dadada;                                             
+                                                &.active {
+                                                    color: #00999a;
+                                                }                                             
+                                            }
+                                        }      
+                                    }                              
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .indicator {
+        height: 7px;
+        width: 7px;
+        border-radius: 15px;
+        &.off-meters {
+            background-color: #e74444;
+        }
+        &.on-meters {
+            background-color: #38c916;
+        }
+    }
+    
+    .marker-list {
+        .marker-onclick-info {
+            .customer-name {
+                color: #000000;
+                font-size: 12px;
+                font-weight: 400;
+            }
+            .consumption {
+                color: #000000;
+                font-size: 16px;
+                font-weight: 700;
+            }
+        }
+    }
+}

@@ -1,0 +1,27 @@
+{
+  "name": "energy_meter",
+  "description": "",
+  "main": "index.js",
+  "authors": [
+    "Ideas2IT"
+  ],
+  "license": "ISC",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "^1.6.10",
+    "angular-material": "^1.1.9",
+    "angular-ui-router": "^1.0.15",
+    "angular-animate": "^1.6.10",
+    "underscore": "^1.9.0",
+    "d3": "^5.1.0",
+    "ngmap": "^1.18.4",
+    "jquery": "^3.3.1"
+  }
+}

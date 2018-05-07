@@ -1,0 +1,56 @@
+<md-dialog class="md-dialog-popup">
+    <md-toolbar class="head-section mail-popup-head">
+        <div class="title-section" layout="row" layout-align="space-between center" layout-margin>
+            <span class="title">
+                Details ({{vm.selectedCustomer}})
+            </span>
+            <span class="c-pointer">
+                <md-icon class="close-icon" ng-click="vm.closeMdDialog()">close</md-icon>
+            </span>
+        </div>
+    </md-toolbar>
+    <md-dialog-content class="dialog-content">
+        <div layout-margin layout='column'>
+            <div layout-margin layout="row" class="common consumtion-graph-div" layout-align="center start">
+                <svg width="100%" height="200" class="consumtion-graph-svg"
+                    id='consumtion-element' power-consume
+                    consumtion-list="vm.powerConsumtionList"
+                    active="vm.isMdDialogOpen">
+                    <g>
+                        <path class='power-consumtion-line' style='fill: none; stroke-width: 4; stroke: #2dabff;'></path>
+                        <g class='axis'></g>
+                        <g>
+                            <rect class='pointer' style='fill: none; pointer-events: all;'
+                                x='70' y='150' height='400'>
+                            </rect>
+                            <g class='focus' style='display: none;'>
+                                <line class='x-hover-line' y1='150' y2='550'
+                                    style='stroke: #001927; stroke-width: 1; stroke-dasharray: 3,3;'>
+                                </line>
+                                <rect width='92' height='65' rx='5' ry='5' y='120'
+                                    style='stroke: #001927; stroke-width: 1'>
+                                </rect>
+                                <text class='date' y='140' style='font-size: 14px; font-weight: 700; fill: #ffffff;'>
+                                </text>
+                                <text ng-if='vm.powerConsumtionList.length' y='160' class='compare-1'
+                                    style='font-size: 14px; font-weight: 700; fill: #b07ad8;'>
+                                </text>
+                                <!-- <text ng-if='vm.hitRatioQuotes.compare2.length' y='180' class='compare-2'
+                                    style='font-size: 14px; font-weight: 700; fill: #9edb6b;'>
+                                </text> -->
+                            </g>
+                        </g>
+                    </g>
+                </svg>
+            </div>
+            <div layout-margin layout="row" class="common status-graph-div" layout-align="center start">
+                <svg width="100%" height="200" class="status-graph-svg">
+
+                </svg>
+            </div>
+        </div>
+    </md-dialog-content>
+    <md-dialog-actions layout="row">
+
+    </md-dialog-actions>
+</md-dialog>
