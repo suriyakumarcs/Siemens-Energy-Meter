@@ -141,7 +141,6 @@
 
             $mdDialog.show({
                 contentElement: '#' + target,
-                targetEvent: event,
                 clickOutsideToClose: true
             });
         };

@@ -27,7 +27,7 @@
                         <div layout="row" class="progress-circle-div" layout-align="center center" ng-if="vm.show.gridLoader">
                             <md-progress-circular class='progress-circle' md-mode="indeterminate" md-diameter="25"></md-progress-circular>
                         </div>
-                        <div layout='row'>
+                        <div flex layout='row'>
                             <div flex layout="row" class='current' ng-class="vm.currentGridMode === 'current' ? 'set-border active' : 'set-border inactive'">
                                 <md-button flex md-no-ink layout-margin ng-click="vm.switchGrid('current');" class="common"
                                     ng-class="vm.currentGridMode === 'current' ? 'common active' : 'common in-active'">
@@ -41,7 +41,7 @@
                                 </md-button>
                             </div>
                         </div>                            
-                        <div layout='row' class='daily-report-details'>
+                        <div  flex layout='row' class='daily-report-details'>
                             <table flex class='table meters-details-table'>
                                 <thead>
                                     <tr layout="row" class='table-head-row'>
@@ -71,7 +71,7 @@
                                         ng-repeat="details in vm.metersDetails">
                                         <td layout-margin flex="30">
                                             <div layout='column'>
-                                                <span class='common-font'>
+                                                <span layout-margin class='common-font'>
                                                     {{details.CustomerID}}
                                                 </span>
                                                 <!-- <span class='common-font'>
