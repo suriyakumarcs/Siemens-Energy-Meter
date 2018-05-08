@@ -56,7 +56,7 @@
         z-index: 1;
         position: fixed;
         top: 45px;
-        left: 60%;
+        left: 58%;
         .right-nav {
             .navigation {
                 background-color: #ffff;
@@ -94,9 +94,10 @@
                     }
                     .daily-report-details {
                         max-height: 500px;
-                        overflow-y: auto;
+                        overflow: auto;
                         .table {
                             &.meters-details-table {
+                                min-width: 405px;
                                 .table-head-row {
                                     background-color: #f7f7f7;
                                 }

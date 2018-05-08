@@ -71,7 +71,7 @@
                                         ng-repeat="details in vm.metersDetails">
                                         <td layout-margin flex="30">
                                             <div layout='column'>
-                                                <span layout-margin class='common-font'>
+                                                <span  class='common-font'>
                                                     {{details.CustomerID}}
                                                 </span>
                                                 <!-- <span class='common-font'>
@@ -84,13 +84,13 @@
                                         </td>
                                         <td layout-margin flex="20">
                                             <div layout='column'>
-                                                <span layout-margin class='common-font'>
+                                                <span  class='common-font'>
                                                     {{vm.d3.format('.2s')(details.Consumption) + "Wh"}}
                                                 </span>
                                             </div>
                                         </td>
                                         <td layout-margin flex="10">
-                                            <div layout-margin layout="row">
+                                            <div layout="row">
                                                 <span layout='column' layout-align='space-around center'>
                                                     <!-- <div class='indicator on-meters m-r-5px'></div> -->
                                                     <div class='indicator off-meters m-r-5px'></div>                                        
@@ -107,13 +107,17 @@
                                         </td>
                                         <td layout-margin flex="30">
                                             <div layout='row' layout-align='space-between center'>
-                                                <span layout-margin class='common-font alert'>
+                                                <span class='common-font alert'>
                                                     {{details.location}}
                                                 </span>
                                                 <span>
                                                     <md-icon class='left-arrow' ng-class='vm.selectedCustomer.CustomerID === details.CustomerID ? "active" : ""'>keyboard_arrow_right</md-icon>
                                                 </span>
                                             </div>
+                                            <!-- <div layout='row' layout-align='space-between center'>
+                                                
+                                                
+                                            </div> -->
                                         </td>
                                     </tr>
                                 </tbody>
