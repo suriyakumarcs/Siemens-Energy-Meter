@@ -36,8 +36,10 @@
         vm.selectedMarker = {};
         vm.sortBy = 'last 6 months';
         vm.isMdDialogOpen = false;
+        vm.searchMonitor = '';
         vm.powerConsumtionList = [];
         vm.metersDetails = [];
+        vm.center = [-25.77628933,28.26657067];
         vm.show = {
             loader: false
         };
@@ -75,6 +77,15 @@
                     vm.show.gridLoader = false;
                 },700);   
             }           
+        };
+
+        /**
+         * Change the graph view into searched location
+         */
+        vm.getPlace = function() {
+            var place = this.getPlace();
+            vm.center = [];
+            vm.center = [place.geometry.location.lat(), place.geometry.location.lng()]
         };
 
         /**
@@ -148,6 +159,12 @@
         vm.closeMdDialog = function() {
             vm.isMdDialogOpen
             $mdDialog.cancel();
+        };
+
+        vm.searchEnergyMonitor = function() {
+            if (!vm.searchMonitor) {
+                vm.center = [-25.77628933,28.26657067];
+            }
         };
     }
 

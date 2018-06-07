@@ -13,8 +13,10 @@
                 <div layout-margin layout="row" class="search-box-section">
                     <md-input-container flex md-no-float class="search-box m-0px">
                         <md-icon ng-if="!vm.showCancelIcon" class="revenue-search-icon">&#xE8B6;</md-icon>
-                        <input class="quote-search-box" ng-model="vm.revenueQuoteSearch"
-                            ng-change="vm.getQuotesByName()"
+                        <input places-auto-complete types="['geocode']"
+                            on-place-changed="vm.getPlace()"
+                            class="quote-search-box" ng-model="vm.searchMonitor"
+                            ng-change="vm.searchEnergyMonitor()"
                             ng-model-options="{debounce: 500}" placeholder="Search energy meter">
                     </md-input-container>
                 </div>
@@ -305,7 +307,7 @@
         </div>
         <!--- Google map ploting start -->
         <div class='marker-list'>
-            <ng-map center="[-25.77628933,28.26657067]" zoom="13">
+            <ng-map center="{{vm.center}}" zoom="10">
                 <marker id='{{marker.MeterId}}' ng-repeat="marker in vm.markers"
                     position="{{[marker.GPS_Location_X, marker.GPS_Location_Y]}}"
                     on-click='vm.getLocationName(marker)'>
