@@ -9,24 +9,25 @@ cache = require('gulp-cache');
 var minifycss = require('gulp-minify-css');
 var browserSync = require('browser-sync');
 var sass = require('gulp-sass');
+var $ = require('gulp-load-plugins')({ lazy: true });
 
 gulp.task('browser-sync', function() {
-browserSync.init(null, {
-server: {
-   baseDir: "./",
-},
-ghostMode: false,
-});
+    browserSync.init(null, {
+    server: {
+      baseDir: "./",
+    },
+    ghostMode: false,
+    });
 });
 
 gulp.task('bs-reload', function () {
-browserSync.reload();
+    browserSync.reload();
 });
 
 gulp.task('images', function(){
-gulp.src('assets/images/**/*')
-.pipe(cache(imagemin({ optimizationLevel: 3, progressive: true, interlaced: true })))
-.pipe(gulp.dest('build/images/'));
+    gulp.src('assets/images/**/*')
+    .pipe(cache(imagemin({ optimizationLevel: 3, progressive: true, interlaced: true })))
+    .pipe(gulp.dest('build/images/'));
 });
 
 /**
@@ -44,6 +45,18 @@ gulp.task('styles', function() {
       .pipe(autoprefixer({ browsers: ['last 2 version', '> 5%'] }))
       .pipe(gulp.dest('build/styles'));
   });
+
+var inject = require('gulp-inject');
+
+gulp.task('index', function () {
+ var target = gulp.src('./index.html');
+ // It's not necessary to read the files (will speed up things), we're only after their paths:
+ var sources = gulp.src(['./app/**/*.module.js', './app/**/*.route.js', './app/**/*.service.js',
+              './app/**/*.js', './build/styles/*.css'], {read: false}, {relative: true});
+
+ return target.pipe(inject(sources))
+   .pipe(gulp.dest('./'));
+});
 
 gulp.task('scripts', function(){
 return gulp.src('app/**/*.js')
@@ -65,4 +78,4 @@ gulp.watch("assets/styles/**/*.scss", ['styles']);
 gulp.watch("app/**/*.js", ['scripts']);
 gulp.watch("*.html", ['bs-reload']);
 });
-gulp.task('serve-dev', ['images','styles','scripts','default']);
+gulp.task('serve-dev', ['images','styles','scripts','default', 'index']);

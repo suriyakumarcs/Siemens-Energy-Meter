@@ -10,8 +10,10 @@
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
         <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet" />
         <link rel="stylesheet" href="/bower_components/angular-material/angular-material.css" />
-        <link href="/build/styles/dashboard.css" rel="stylesheet">
-        <link href="/build/styles/dashboard.common.css" rel="stylesheet">
+        <!-- inject:css -->
+        <link rel="stylesheet" href="/build/styles/dashboard.common.css">
+        <link rel="stylesheet" href="/build/styles/dashboard.css">
+        <!-- endinject -->
     </head>
     <body ng-app="app">
         <div ui-view></div>
@@ -28,13 +30,15 @@
     <script src="/bower_components/d3/d3.js"></script>
     <!-- end bower -->
     <!-- google API -->
-    <script src="http://maps.google.com/maps/api/js?key=AIzaSyCnYIOwozyrz4l-L-pJpK2lUUSBJY1Wk9Y&libraries=places"></script>
+    <script src="https://maps.google.com/maps/api/js?key=AIzaSyCnYIOwozyrz4l-L-pJpK2lUUSBJY1Wk9Y&libraries=places"></script>
     <!-- google API end -->
+    
     <!-- inject:js -->
     <script src="/app/app.module.js"></script>
     <script src="/app/dashboard/dashboard.module.js"></script>
     <script src="/app/dashboard/dashboard.route.js"></script>
-    <script src="/app/dashboard/dashboard.controller.js"></script>    
-    <script src="/app/dashboard/power-consume.directive.js"></script>
+    <script src="/app/dashboard/dashboard.controller.js"></script>
     <script src="/app/dashboard/meter-status.directive.js"></script>
+    <script src="/app/dashboard/power-consume.directive.js"></script>
+    <!-- endinject -->
 </html>
